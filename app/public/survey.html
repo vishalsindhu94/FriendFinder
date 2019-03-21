@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>FriendFinder</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body style="background-color: blueviolet">
+    <div class="container">
+
+        <h2>Survey Questions</h2>
+        <hr>
+        <h3>Profile</h3>
+        <h4>Name</h4>
+        <input type="text" id="name" class="form-control" required>
+        <hr>
+        <h3>Question 1</h3>
+        <h4>Are you a outgoing person?</h4>
+        <select class="chosen-select" id="Q1">
+            <option value>Pick what best suits you</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <h3>Question 2</h3>
+        <h4>How much do you value your friends?</h4>
+        <select class="chosen-select" id="Q2">
+            <option value>Pick what best suits you</option>
+            <option value="1">1 (very little)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Alot)</option>
+        </select>
+        <h3>Question 3</h3>
+        <h4>Do you like to go on adventures?</h4>
+        <select class="chosen-select" id="Q3">
+            <option value>Pick what best suits you</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question 4</h3>
+        <h4>Do you have alot of friends?</h4>
+        <select class="chosen-select" id="Q4">
+            <option value>Pick what best suits you</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question 5</h3>
+        <h4>Do you like meeting new people?</h4>
+        <select class="chosen-select" id="Q5">
+            <option value>Pick what best suits you</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question 6</h3>
+        <h4>Do you think you will make alot of friends filing out this survey?</h4>
+        <select class="chosen-select" id="Q6">
+            <option value>Pick what best suits you</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question 7</h3>
+        <h4>Are you close with your current friends?</h4>
+        <select class="chosen-select" id="Q7">
+            <option value>Pick what best suits you</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question 8</h3>
+        <h4>Do you like to watch movies?</h4>
+        <select class="chosen-select" id="Q8">
+            <option value>Pick what best suits you</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question 9</h3>
+        <h4>Do you like to play sports?</h4>
+        <select class="chosen-select" id="Q9">
+            <option value>Pick what best suits you</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question 10</h3>
+        <h4>Do you like to sleep?</h4>
+        <select class="chosen-select" id="Q10">
+            <option value>Pick what best suits you</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <button type="submit" class="btn btn-danger btn-lg btn-block" id="submit">
+            Submit</button>
+
+
+
+
+        <footer class="footer">
+
+            <div class="container">
+                <p>
+                    <a href="api/friends" style="color:crimson">API Friends List</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Best Match</h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="matchname"></h2>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    function validation() {
+          // not working as intended, was also giving me issues before and kept displaying the alert after i hit submit
+          // for now it will always get through the validation, maybe because i have it looking for an empty input but maybe because there something always in it 
+          //since i have it set to pick what best suits you, it reads that as something even tho that option doesnt have a value set
+		  $(".form-control").each(function() {
+		    if ( $(this).val() === "" )
+		        return true;
+		  });
+		  $(".chosen-select").each(function() {
+		  	if( $(this).val() === "")
+		  		return true;
+		  })
+		  return false;
+    }
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+        if (validation()=== false) {
+            alert("You have some unanswered questions!");
+        }
+        else {
+        
+            var newScores = [];
+           
+            
+            newScores.push($("#Q1").val());
+            newScores.push($("#Q2").val());
+            newScores.push($("#Q3").val());
+            newScores.push($("#Q4").val());
+            newScores.push($("#Q5").val());
+            newScores.push($("#Q6").val());
+            newScores.push($("#Q7").val());
+            newScores.push($("#Q8").val());
+            newScores.push($("#Q9").val());
+            newScores.push($("#Q10").val());
+         
+            var newfriend = {
+                name: $("#name").val().trim(),
+                scores: newScores
+            };
+            console.log(newfriend);
+            $.post("/api/friends", newfriend,
+                function (data) {
+                    console.log(data.name);
+                    $("#matchname").text(data.name);
+                    $("#myModal").modal("toggle");
+                    $("#name").val("");   
+                    $("#Q1").val("");
+                    $("#Q2").val("");
+                    $("#Q3").val("");
+                    $("#Q4").val("");
+                    $("#Q5").val("");
+                    $("#Q6").val("");
+                    $("#Q7").val("");
+                    $("#Q8").val("");
+                    $("#Q9").val("");
+                    $("#Q10").val("");
+                });
+        }
+    });
+</script>
